@@ -31,10 +31,11 @@ complete = complete.cases(final)
 final = final[complete, ]
 
 graphics.off()
+png("plot4.png", height = 480, width = 480)
 par(mfrow = c(1, 1))
 par(mar = c(4, 4, 1, 1))
 
 with(final, plot(datetime, Global_active_power, type="s",ylab="Global Active Power(kilowatts)", lwd=1))
 
-dev.copy(png, 'plot2.png', height = 480, width = 480)
+
 dev.off()

@@ -31,6 +31,7 @@ complete = complete.cases(final)
 final = final[complete, ]
 
 graphics.off()
+png("plot3.png", height = 480, width = 480)
 par(mfrow = c(1, 1))
 par(mar = c(4, 4, 1, 1))
 
@@ -40,5 +41,5 @@ lines(final$datetime, final$Sub_metering_3, col="blue")
 legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), 
        col=c("black","red","blue"), lty=c(1,1,1), ncol=1)
 
-dev.copy(png, 'plot3.png', height = 480, width = 480)
+#dev.copy(png, 'plot3.png', height = 480, width = 480)
 dev.off()

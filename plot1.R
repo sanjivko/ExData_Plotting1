@@ -29,6 +29,7 @@ complete = complete.cases(final)
 final = final[complete, ]
 
 graphics.off()
+png("plot4.png", height = 480, width = 480)
 par(mfrow = c(1, 1))
 par(mar = c(4, 4, 1, 1))
 
@@ -41,5 +42,4 @@ h = hist(
   main = "Global Active Power"
 )
 
-dev.copy(png, 'plot1.png', height = 480, width = 480)
 dev.off()

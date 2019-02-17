@@ -33,7 +33,8 @@ complete = complete.cases(final)
 final = final[complete, ]
 
 graphics.off()
-par(fin=c())
+png("plot4.png", height = 480, width = 480)
+
 par(mfrow = c(2, 2))
 par(mar = c(4, 4, 1, 1))
 
@@ -49,11 +50,11 @@ with(final, plot(datetime,Sub_metering_1,type="s",ylab="Energy sub metering", xl
 lines(final$datetime, final$Sub_metering_2, col="red")
 lines(final$datetime, final$Sub_metering_3, col="blue")
 legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), 
-       col=c("black","red","blue"), lty=c(1,1,1), ncol=1)
+       col=c("black","red","blue"), lty=c(1,1,1), ncol=1, bty = "n")
 
 #plot4
 with(final, plot(datetime, Global_reactive_power, type="s",lwd=1))
 
 
-dev.copy(png, 'plot4.png', height = 480, width = 480)
+#dev.copy(png, 'plot4.png', height = 480, width = 480)
 dev.off()
